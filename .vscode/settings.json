@@ -1,0 +1,11 @@
+{
+    "C_Cpp.dimInactiveRegions": false,
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "so_long.h": "c",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "init_game.h": "c"
+    }
+}
