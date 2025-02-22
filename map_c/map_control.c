@@ -96,12 +96,12 @@ void update_map(t_data *data, int x, int y)
 
 	i1 = 0;
 	data->step_counter++;
-	if (data->collected_count == (data->collectable_count / 2)
-			&& (data->exit_arr[0] == (data->player_x + (data->pixel_size * x)) && data->exit_arr[1] == (data->player_y + (data->pixel_size * y))))
+	if (data->collected_count == data->collectable_count
+            && (data->exit_arr[0] == (data->player_x + (data->pixel_size * x)) && data->exit_arr[1] == (data->player_y + (data->pixel_size * y))))
 		ft_close_game(data);
-	while (i1 + 1 < data->collectable_count)
+	while (i1 + 1 < data->collectable_count * 2)
 	{
-		if (data->collectable_arr[i1] == (data->player_x + (64 * x)) && data->collectable_arr[i1 + 1] == (data->player_y + (64 * y)))
+		if (data->collectable_arr[i1] == (data->player_x + (data->pixel_size * x)) && data->collectable_arr[i1 + 1] == (data->player_y + (data->pixel_size * y)))
 		{
 			data->collectable_arr[i1] = 2348902;
 			data->collectable_arr[i1 + 1] = 2348902;

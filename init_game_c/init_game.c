@@ -20,7 +20,7 @@ void ft_open_malloc(t_data *data)
         ft_printf("dostum player count: %d, exit count: %d, collectable count: %d - bunları bir kontrol et sana zahmet", data->player_count, data->exit_count, data->collectable_count);
         ft_close_game(data);
     }
-    else if (data->screen_x == 5 && data->screen_y == 3)
+    //else if (data->screen_x == 5 && data->screen_y == 3)
     data->collectable_arr = malloc(sizeof(int) * (data->collectable_count * 2));
     data->wall_arr = malloc(sizeof(int) * (data->wall_count * 2));
 	data->exit_arr = malloc(sizeof(int) * 2);
