@@ -21,11 +21,16 @@ void free_map(t_data *data)
 }
 void	ft_destroy_images(t_data *data)
 {
-    mlx_destroy_image(data->mlx, data->img_collectable);
-    mlx_destroy_image(data->mlx, data->img_door);
-    mlx_destroy_image(data->mlx, data->img_ground);
-    mlx_destroy_image(data->mlx, data->img_player);
-    mlx_destroy_image(data->mlx, data->img_wall);
+    if (data->img_collectable)
+        mlx_destroy_image(data->mlx, data->img_collectable);
+    if (data->img_door)
+        mlx_destroy_image(data->mlx, data->img_door);
+    if (data->img_ground)
+        mlx_destroy_image(data->mlx, data->img_ground);
+    if (data->img_player)
+        mlx_destroy_image(data->mlx, data->img_player);
+    if (data->img_collectable)
+        mlx_destroy_image(data->mlx, data->img_wall);
 }
 
 void free_arrays(t_data *data)
@@ -33,6 +38,7 @@ void free_arrays(t_data *data)
     free(data->collectable_arr);
     free(data->exit_arr);
     free(data->wall_arr);
+    free(data->line_count);
 }
 
 void	ft_free_all_allocated_memory(t_data *data)
@@ -46,23 +52,4 @@ void	ft_free_all_allocated_memory(t_data *data)
     free(data->game_name);
     free(data->mlx);
     free(data);
-}
-
-int ft_close_game(void *data)
-{
-    t_data *data2;
-    if (data == NULL)
-    {
-        ft_free_all_allocated_memory(data);
-        ft_printf("data boş kanka malesef \n");
-        exit(EXIT_FAILURE);
-    }
-    else
-    {
-        (void)data;
-        data2 = (t_data *)data;
-        ft_printf("helal lan yusufi tebrikler");
-        ft_free_all_allocated_memory(data2);
-    }
-    exit(EXIT_SUCCESS);
 }

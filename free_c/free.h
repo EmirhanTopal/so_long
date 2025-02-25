@@ -8,5 +8,6 @@ void	ft_destroy_images(t_data *data);
 void    free_arrays(t_data *data);
 void	ft_free_all_allocated_memory(t_data *data);
 int		ft_close_game(void *data);
+int     ft_close_game2(t_data *data);
 
 #endif

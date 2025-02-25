@@ -20,7 +20,6 @@ void ft_open_malloc(t_data *data)
         ft_printf("dostum player count: %d, exit count: %d, collectable count: %d - bunları bir kontrol et sana zahmet", data->player_count, data->exit_count, data->collectable_count);
         ft_close_game(data);
     }
-    //else if (data->screen_x == 5 && data->screen_y == 3)
     data->collectable_arr = malloc(sizeof(int) * (data->collectable_count * 2));
     data->wall_arr = malloc(sizeof(int) * (data->wall_count * 2));
 	data->exit_arr = malloc(sizeof(int) * 2);
@@ -38,8 +37,27 @@ void data_init(t_data *data, char **argv)
 
 void cannot_init(t_data *data)
 {
-    if (data->screen_x < 0 || data->screen_y < 0
-		|| !(data -> game_name) || !(data -> filename))
+    int a;
+    int i;
+
+    if (data->line_count == NULL || data->line_count_index <= 0) {
+        ft_printf("Hata: line_count NULL veya line_count_index 0!\n");
+        return;
+    }
+    a = data->line_count[0];
+    i = 0;
+    while (i < data->line_count_index)
+    {
+        ft_printf("%d", data->line_count[i]);
+        if (data->line_count[i] != a)
+            data->flag = 1;
+        i++;
+    }
+    ft_printf("%d", data->flag);
+    if (data->flag == 1)
+        ft_close_game2(data);
+    if (data->screen_x < 0 || data->screen_y < 0 || 
+        !(data -> game_name) || !(data -> filename))
 	{
 		ft_printf("kral oyun başlayamadı üzgünüm\n");
 		ft_close_game(data);

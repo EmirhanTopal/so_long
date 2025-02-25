@@ -32,7 +32,10 @@ typedef struct s_data
     int     *exit_arr;
     int     exit_count;
     int     player_count;
+    int     *line_count;
+    int     line_count_index;
     char    **map;
+    int     flag;
 	char	*filename;
 	char	*game_name;
 } t_data;

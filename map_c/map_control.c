@@ -8,17 +8,13 @@ char **load_map(char *filename, int *rows, t_data *data)
 {
     int     fd;
     char    *line;
-    int     i;
 
+    line = NULL;
     fd = open(filename, O_RDONLY);
-    if (fd < 0)
-        return (NULL);
-    *rows = 0;
-    while ((line = get_next_line(fd)) != NULL)
-    {
-		(*rows)++;
-        free(line);
-    }
+    *rows = load_map_1(fd, line);
+    close(fd);
+    fd = open(filename, O_RDONLY);
+    load_map_2(data, line, fd, rows);
 	close(fd);
     data->map = malloc(sizeof(char *) * ((*rows) + 1));
     if (data->map == NULL)
@@ -29,10 +25,7 @@ char **load_map(char *filename, int *rows, t_data *data)
 		free(data->map);
         return (NULL);
 	}
-    i = 0;
-    while ((line = get_next_line(fd)) != NULL)
-        data->map[i++] = line;
-    data->map[i] = NULL;
+    load_map_3(data, line, fd);
     close(fd);
     return (data->map);
 }
