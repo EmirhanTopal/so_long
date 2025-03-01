@@ -20,6 +20,7 @@ FILES = main.c \
 	$(FREE_DIR)/free.c \
 	$(FREE_DIR)/free_2.c \
 	$(INIT_DIR)/init_game.c \
+	$(INIT_DIR)/init_game_2.c \
 	$(KEY_DIR)/key_handle.c \
 	$(MAP_DIR)/map_control.c \
 	$(MAP_DIR)/map_control_2.c 

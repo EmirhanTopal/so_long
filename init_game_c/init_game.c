@@ -27,9 +27,12 @@ void ft_open_malloc(t_data *data)
 
 void data_init(t_data *data, char **argv)
 {
+    int len_filename;
     data->pixel_size = 64;
     data->game_name = ft_strdup("so_long");
     data->filename = ft_strdup(argv[1]);
+    len_filename = ft_strlen(data->filename);
+    cannot_ber(data, len_filename);
     data->map = load_map(argv[1], &data->rows, data);
     data->screen_x = (ft_strlen(data->map[0]) - 2) * data->pixel_size;
 	data->screen_y = data->rows * data->pixel_size;
@@ -40,10 +43,8 @@ void cannot_init(t_data *data)
     int a;
     int i;
 
-    if (data->line_count == NULL || data->line_count_index <= 0) {
-        ft_printf("Hata: line_count NULL veya line_count_index 0!\n");
+    if (data->line_count == NULL || data->line_count_index <= 0)
         return;
-    }
     a = data->line_count[0];
     i = 0;
     while (i < data->line_count_index)
@@ -53,15 +54,7 @@ void cannot_init(t_data *data)
             data->flag = 1;
         i++;
     }
-    ft_printf("%d", data->flag);
-    if (data->flag == 1)
-        ft_close_game2(data);
-    if (data->screen_x < 0 || data->screen_y < 0 || 
-        !(data -> game_name) || !(data -> filename))
-	{
-		ft_printf("kral oyun başlayamadı üzgünüm\n");
-		ft_close_game(data);
-	}
+    cannot_start(data);
 }
 
 void init_game(t_data *data, char **argv)

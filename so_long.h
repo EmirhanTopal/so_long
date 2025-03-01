@@ -42,5 +42,6 @@ typedef struct s_data
 
 void	*ft_calloc(size_t count, size_t size);
 void    just_one_line(int *arr, int *index, int *x, int *y, t_data *data);
+int	    ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
