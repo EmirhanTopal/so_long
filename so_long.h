@@ -23,10 +23,10 @@ typedef struct s_data
 	void	*mlx;
 	void	*win;
 	void	*img_player;
-	void	g_ground;
-	void	g_wall;
-	void	g_collectable;
-	void	g_door;
+	void	*img_ground;
+	void	*img_wall;
+	void	*img_collectable;
+	void	*img_door;
 	int		player_x;
 	int		player_y;
 	int		screen_x;
@@ -48,8 +48,8 @@ typedef struct s_data
 	int		line_count_index;
 	char	**map;
 	int		flag;
-	char	filename;
-	char	game_name;
+	char	*filename;
+	char	*game_name;
 	int		u_x;
 	int		l_y;
 	int		lw_x;

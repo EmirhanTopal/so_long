@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
-FILES = ft_printf.c staticfunctions.c
+FILES = ft_printf.c staticfunctions.c staticfunctions_2.c
 
 OBJECTS = $(FILES:.c=.o)
 
