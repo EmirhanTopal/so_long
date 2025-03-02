@@ -23,7 +23,8 @@ FILES = main.c \
 	$(INIT_DIR)/init_game_2.c \
 	$(KEY_DIR)/key_handle.c \
 	$(MAP_DIR)/map_control.c \
-	$(MAP_DIR)/map_control_2.c 
+	$(MAP_DIR)/map_control_2.c \
+	$(MAP_DIR)/map_control_3.c 
 
 
 OBJS = $(FILES:.c=.o)

@@ -40,7 +40,7 @@ char	*ft_strdup(const char *s1)
 	return (p2);
 }
 
-static	char	*reminder_value(char **str) 
+static	char	*reminder_value(char **str)
 {
 	char	*line;
 	char	*temp;
@@ -80,8 +80,8 @@ static	char	*read_file(int fd, char *adrs)
 	if (buffer == NULL)
 		return (NULL);
 	if (adrs == NULL)
-		adrs = ft_strdup(""); // ""
-	while (ft_strchr(adrs, '\n') == NULL && bytes_count >= 0) //abc\n
+		adrs = ft_strdup("");
+	while (ft_strchr(adrs, '\n') == NULL && bytes_count >= 0)
 	{
 		bytes_count = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_count < 0)
@@ -89,7 +89,7 @@ static	char	*read_file(int fd, char *adrs)
 		buffer[bytes_count] = '\0';
 		if (bytes_count == 0)
 			break ;
-		temp = ft_strjoin(adrs, buffer); // "ab" + "c\n" = "abc\nsdçjfsldfjk"
+		temp = ft_strjoin(adrs, buffer);
 		free(adrs);
 		adrs = temp;
 	}
@@ -104,13 +104,13 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);
-	last_pointer = read_file(fd, last_pointer); //"abc\nsdçjfsldfjk"
+	last_pointer = read_file(fd, last_pointer);
 	if (!last_pointer || last_pointer[0] == '\0')
 	{
 		free(last_pointer);
 		last_pointer = NULL;
 		return (NULL);
 	}
-	new_line = reminder_value(&last_pointer); //0xd
+	new_line = reminder_value(&last_pointer);
 	return (new_line);
 }
