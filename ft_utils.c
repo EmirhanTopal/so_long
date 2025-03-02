@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/02 17:33:01 by marvin            #+#    #+#             */
+/*   Updated: 2025/03/02 17:33:01 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	*ft_calloc(size_t count, size_t size)
@@ -17,12 +29,6 @@ void	*ft_calloc(size_t count, size_t size)
 		i++;
 	}
 	return (ptr);
-}
-
-void just_one_line(int *arr, int *index, int *x, int *y, t_data *data)
-{   
-    arr[(*index)++] = *x * data->pixel_size;
-    arr[(*index)++] = *y * data->pixel_size;
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
