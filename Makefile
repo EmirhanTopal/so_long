@@ -9,9 +9,8 @@ KEY_DIR = ./key_c
 MAP_DIR = ./map_c
 FREE_DIR = ./free_c
 INIT_DIR = ./init_game_c
-DFS_DIR = ./dfs_c
 
-CFLAGS = -Wall -Wextra -Werror -I. -Iinit_game_c -Idfs_c -Ifree_c -Icheck_c -Ikey_c -Imap_c -I$(MLX_DIR) -I$(GETNEXT_DIR) -I$(PRINTF_DIR)
+CFLAGS = -Wall -Wextra -Werror -g -I. -Iinit_game_c -Ifree_c -Icheck_c -Ikey_c -Imap_c -I$(MLX_DIR) -I$(GETNEXT_DIR) -I$(PRINTF_DIR)
 MLX_FLAGS = -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
 FILES = main.c \
 	ft_utils.c \
@@ -19,11 +18,13 @@ FILES = main.c \
 	$(GETNEXT_DIR)/get_next_line_utils.c \
 	$(CHECK_DIR)/check.c \
 	$(FREE_DIR)/free.c \
+	$(FREE_DIR)/free_2.c \
 	$(INIT_DIR)/init_game.c \
+	$(INIT_DIR)/init_game_2.c \
 	$(KEY_DIR)/key_handle.c \
 	$(MAP_DIR)/map_control.c \
-	$(DFS_DIR)/dfs_control.c 
-
+	$(MAP_DIR)/map_control_2.c \
+	$(MAP_DIR)/map_control_3.c 
 
 
 OBJS = $(FILES:.c=.o)

@@ -6,7 +6,6 @@
         "array": "cpp",
         "string": "cpp",
         "string_view": "cpp",
-        "init_game.h": "c",
-        "ft_printf.h": "c"
+        "init_game.h": "c"
     }
 }
