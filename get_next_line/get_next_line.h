@@ -20,6 +20,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+
+
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
