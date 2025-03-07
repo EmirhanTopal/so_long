@@ -23,6 +23,8 @@ char	**load_map(char *filename, int *rows, t_data *data)
 
 	line = NULL;
 	fd = open(filename, O_RDONLY);
+	if (fd < 0)
+		ft_close_game2(data);
 	*rows = load_map_1(fd, line);
 	close(fd);
 	fd = open(filename, O_RDONLY);

@@ -38,6 +38,7 @@ int	ft_close_game(void *data)
 
 int	ft_close_game2(t_data *data)
 {
+	ft_printf("oyun başlayamadı\n");
 	free_map(data);
 	if (data->win)
 		mlx_destroy_window(data->mlx, data->win);
