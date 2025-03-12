@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 17:38:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 17:39:20 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/12 13:43:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "free.h"
 #include "key_handle.h"
 #include "map_control.h"
+#include "dfs_control.h"
 
 int	main(int argc, char **argv)
 {
@@ -39,6 +40,7 @@ int	main(int argc, char **argv)
 			data->screen_y, data->game_name);
 	ft_xpm_to_image(data);
 	create_map(data);
+	dfs_control(data);
 	is_rectangular(data);
 	mlx_key_hook(data->win, handle_key_input, data);
 	mlx_loop(data->mlx);

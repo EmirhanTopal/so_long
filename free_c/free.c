@@ -51,6 +51,7 @@ void	free_arrays(t_data *data)
 	free(data->collectable_arr);
 	free(data->exit_arr);
 	free(data->wall_arr);
+	free(data->visited_arr);
 	free(data->line_count);
 }
 

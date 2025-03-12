@@ -34,10 +34,14 @@ typedef struct s_data
 	int		pixel_size;
 	int		step_counter;
 	int		rows;
+	int     *visited_arr;
+    int     visited_index;
+    int     visited_count;
 	int		*collectable_arr;
 	int		collectable_count;
 	int		collectable_index;
 	int		collected_count;
+	int     collected_control_count;
 	int		*wall_arr;
 	int		wall_count;
 	int		wall_index;
