@@ -33,6 +33,9 @@ void	ft_xpm_to_image(t_data *data)
 
 void	ft_open_malloc(t_data *data)
 {
+	int	double_size;
+
+	double_size = data->screen_x * data->screen_y * 2;
 	if (data->player_count > 1 || data->exit_count > 1
 		|| data->collectable_count < 1)
 	{
@@ -43,7 +46,7 @@ void	ft_open_malloc(t_data *data)
 	data->collectable_arr = malloc(sizeof(int) * (data->collectable_count * 2));
 	data->wall_arr = malloc(sizeof(int) * (data->wall_count * 2));
 	data->exit_arr = malloc(sizeof(int) * 2);
-	data->visited_arr = malloc(sizeof(int) * (data->screen_x * data->screen_y * 2));
+	data->visited_arr = malloc(sizeof(int) * (double_size));
 }
 
 void	data_init(t_data *data, char **argv)

@@ -19,6 +19,7 @@ FILES = main.c \
 	$(GETNEXT_DIR)/get_next_line_utils.c \
 	$(CHECK_DIR)/check.c \
 	$(DFS_DIR)/dfs_control.c \
+	$(DFS_DIR)/dfs_control_2.c \
 	$(FREE_DIR)/free.c \
 	$(FREE_DIR)/free_2.c \
 	$(INIT_DIR)/init_game.c \

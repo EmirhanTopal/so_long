@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 17:38:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/12 14:56:58 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/12 16:37:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int	main(int argc, char **argv)
 		return (0);
 	data->mlx = mlx_init();
 	if (data->mlx == NULL)
-	{
 		ft_close_game(data);
-	}
 	init_game(data, argv);
 	data->win = mlx_new_window(data->mlx, data->screen_x,
 			data->screen_y, data->game_name);
