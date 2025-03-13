@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 16:45:05 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 16:45:05 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/13 22:45:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ char	**load_map(char *filename, int *rows, t_data *data)
 	line = NULL;
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		ft_close_game2(data);
+		exit(0);
 	*rows = load_map_1(fd, line);
-	close(fd);
+	if (*rows <= 0)
+		exit(1);
 	fd = open(filename, O_RDONLY);
 	data->line_count = malloc(sizeof(int) * data->rows);
 	load_map_2(data, line, fd, rows);
-	close(fd);
 	data->map = malloc(sizeof(char *) * ((*rows) + 1));
 	if (data->map == NULL)
 		return (NULL);
@@ -41,7 +41,6 @@ char	**load_map(char *filename, int *rows, t_data *data)
 		return (NULL);
 	}
 	load_map_3(data, line, fd);
-	close(fd);
 	return (data->map);
 }
 
@@ -66,6 +65,7 @@ int	load_map_1(int fd, char *line)
 			rows++;
 		free(line);
 	}
+	close(fd);
 	return (rows);
 }
 
@@ -95,6 +95,7 @@ void	load_map_2(t_data *data, char *line, int fd, int *rows)
 		free(line);
 	}
 	data->line_count_index = i;
+	close(fd);
 }
 
 void	load_map_3(t_data *data, char *line, int fd)
@@ -113,4 +114,5 @@ void	load_map_3(t_data *data, char *line, int fd)
 			data->map[i++] = line;
 	}
 	data->map[i] = NULL;
+	close(fd);
 }

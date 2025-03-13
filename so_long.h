@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: emtopal <emtopal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 17:39:41 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 17:40:52 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/13 13:14:17 by emtopal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ typedef struct s_data
 	int		pixel_size;
 	int		step_counter;
 	int		rows;
-	int     *visited_arr;
-    int     visited_index;
-    int     visited_count;
+	int		*visited_arr;
+	int		visited_index;
+	int		visited_count;
 	int		*collectable_arr;
 	int		collectable_count;
 	int		collectable_index;
 	int		collected_count;
-	int     collected_control_count;
+	int		collected_control_count;
 	int		*wall_arr;
 	int		wall_count;
 	int		wall_index;

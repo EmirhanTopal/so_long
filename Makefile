@@ -18,6 +18,7 @@ FILES = main.c \
 	$(GETNEXT_DIR)/get_next_line.c \
 	$(GETNEXT_DIR)/get_next_line_utils.c \
 	$(CHECK_DIR)/check.c \
+	$(CHECK_DIR)/check_2.c \
 	$(DFS_DIR)/dfs_control.c \
 	$(DFS_DIR)/dfs_control_2.c \
 	$(FREE_DIR)/free.c \

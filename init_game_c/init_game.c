@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:05:40 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 03:05:40 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/13 22:53:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_open_malloc(t_data *data)
 	{
 		ft_printf("dostum player c: %d, exit c: %d, collectable c: %d",
 			data->player_count, data->exit_count, data->collectable_count);
-		ft_close_game(data);
+		ft_close_game2(data);
 	}
 	data->collectable_arr = malloc(sizeof(int) * (data->collectable_count * 2));
 	data->wall_arr = malloc(sizeof(int) * (data->wall_count * 2));
@@ -59,7 +59,7 @@ void	data_init(t_data *data, char **argv)
 	len_filename = ft_strlen(data->filename);
 	cannot_ber(data, len_filename);
 	data->map = load_map(argv[1], &data->rows, data);
-	data->screen_x = (ft_strlen(data->map[0]) - 2) * data->pixel_size;
+	data->screen_x = (ft_strlen(data->map[0]) - 1) * data->pixel_size;
 	data->screen_y = data->rows * data->pixel_size;
 }
 
@@ -67,6 +67,7 @@ void	cannot_init(t_data *data)
 {
 	int	a;
 	int	i;
+	int	len;
 
 	if (data->line_count == NULL || data->line_count_index <= 0)
 		return ;
@@ -74,9 +75,18 @@ void	cannot_init(t_data *data)
 	i = 0;
 	while (i < data->line_count_index)
 	{
+		if (i == (data->line_count_index - 1))
+			data->line_count[i] -= 1;
 		if (data->line_count[i] != a)
 			data->flag = 1;
 		i++;
+	}
+	len = ft_strlen(data->map[data->rows - 1]);
+	if (len > 0 && data->map[data->rows - 1][len - 1] == '\n')
+	{
+		ft_printf("Son satırda new line var!\n");
+		data->map[data->rows - 1][len - 1] = '\0';
+		data->flag = 0;
 	}
 	cannot_start(data);
 }

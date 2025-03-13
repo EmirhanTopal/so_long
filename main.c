@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 17:38:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/12 16:37:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/13 22:39:32 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	main(int argc, char **argv)
 			data->screen_y, data->game_name);
 	ft_xpm_to_image(data);
 	create_map(data);
-	dfs_control(data);
 	is_rectangular(data);
+	dfs_control(data);
 	mlx_key_hook(data->win, handle_key_input, data);
 	mlx_loop(data->mlx);
 	ft_close_game(data);
