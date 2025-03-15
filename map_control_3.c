@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:40:22 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 03:40:22 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/15 18:24:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void	update_map(t_data *data, int x, int y)
 	check_exit_condition(data, x, y);
 	update_collectable(data, x, y);
 	move_player(data, x, y);
-	ft_printf("step counter: %d\n", data->step_counter);
+	ft_printf("Step counter: %d\n", data->step_counter);
 }

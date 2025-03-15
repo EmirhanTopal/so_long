@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:15:01 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/12 16:15:01 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/15 18:20:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	dfs_control(t_data *data)
 	dfs_main_control(data, data->player_x, data->player_y);
 	if (data->collected_control_count != data->collectable_count)
 	{
-		ft_printf("kral bu çalışmaz başka map dene");
+		ft_printf("inaccessable coin finded");
 		ft_close_game(data);
 	}
 }

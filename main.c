@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 17:38:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/13 22:39:32 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/15 18:24:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_printf("kral argc yanlış 2 yap 2");
+		ft_printf("Argc is not 2");
 		return (-1);
 	}
 	data = ft_calloc(1, sizeof(t_data));

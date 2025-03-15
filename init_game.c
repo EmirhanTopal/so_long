@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:05:40 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/13 22:53:19 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/15 18:24:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 
 void	ft_xpm_to_image(t_data *data)
 {
-	data->img_ground = mlx_xpm_file_to_image(data->mlx, "xpm_images/ground.xpm",
+	data->img_ground = mlx_xpm_file_to_image(data->mlx, "textures/ground.xpm",
 			&data->pixel_size, &data->pixel_size);
-	data->img_wall = mlx_xpm_file_to_image(data->mlx, "xpm_images/wall.xpm",
+	data->img_wall = mlx_xpm_file_to_image(data->mlx, "textures/wall.xpm",
 			&data->pixel_size, &data->pixel_size);
-	data->img_player = mlx_xpm_file_to_image(data->mlx, "xpm_images/player.xpm",
+	data->img_player = mlx_xpm_file_to_image(data->mlx, "textures/player.xpm",
 			&data->pixel_size, &data->pixel_size);
 	data->img_collectable = mlx_xpm_file_to_image(data->mlx,
-			"xpm_images/collectable.xpm",
+			"textures/collectable.xpm",
 			&data->pixel_size, &data->pixel_size);
-	data->img_door = mlx_xpm_file_to_image(data->mlx, "xpm_images/door.xpm",
+	data->img_door = mlx_xpm_file_to_image(data->mlx, "textures/door.xpm",
 			&data->pixel_size, &data->pixel_size);
 }
 
@@ -39,7 +39,7 @@ void	ft_open_malloc(t_data *data)
 	if (data->player_count > 1 || data->exit_count > 1
 		|| data->collectable_count < 1)
 	{
-		ft_printf("dostum player c: %d, exit c: %d, collectable c: %d",
+		ft_printf("player c: %d, exit c: %d, collectable c: %d",
 			data->player_count, data->exit_count, data->collectable_count);
 		ft_close_game2(data);
 	}
@@ -84,7 +84,6 @@ void	cannot_init(t_data *data)
 	len = ft_strlen(data->map[data->rows - 1]);
 	if (len > 0 && data->map[data->rows - 1][len - 1] == '\n')
 	{
-		ft_printf("Son satırda new line var!\n");
 		data->map[data->rows - 1][len - 1] = '\0';
 		data->flag = 0;
 	}

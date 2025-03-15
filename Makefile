@@ -4,31 +4,25 @@ RM = rm -rf
 MLX_DIR = ./mlx
 GETNEXT_DIR = ./get_next_line
 PRINTF_DIR = ./printf
-CHECK_DIR = ./check_c
-KEY_DIR = ./key_c
-MAP_DIR = ./map_c
-FREE_DIR = ./free_c
-INIT_DIR = ./init_game_c
-DFS_DIR = ./dfs_c
 
-CFLAGS = -Wall -Wextra -Werror -g -I. -Idfs_c -Iinit_game_c -Ifree_c -Icheck_c -Ikey_c -Imap_c -I$(MLX_DIR) -I$(GETNEXT_DIR) -I$(PRINTF_DIR)
+CFLAGS = -Wall -Wextra -Werror -g -I$(MLX_DIR) -I$(GETNEXT_DIR) -I$(PRINTF_DIR)
 MLX_FLAGS = -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
 FILES = main.c \
 	ft_utils.c \
 	$(GETNEXT_DIR)/get_next_line.c \
 	$(GETNEXT_DIR)/get_next_line_utils.c \
-	$(CHECK_DIR)/check.c \
-	$(CHECK_DIR)/check_2.c \
-	$(DFS_DIR)/dfs_control.c \
-	$(DFS_DIR)/dfs_control_2.c \
-	$(FREE_DIR)/free.c \
-	$(FREE_DIR)/free_2.c \
-	$(INIT_DIR)/init_game.c \
-	$(INIT_DIR)/init_game_2.c \
-	$(KEY_DIR)/key_handle.c \
-	$(MAP_DIR)/map_control.c \
-	$(MAP_DIR)/map_control_2.c \
-	$(MAP_DIR)/map_control_3.c 
+	check.c \
+	check_2.c \
+	dfs_control.c \
+	dfs_control_2.c \
+	free.c \
+	free_2.c \
+	init_game.c \
+	init_game_2.c \
+	key_handle.c \
+	map_control.c \
+	map_control_2.c \
+	map_control_3.c 
 
 
 OBJS = $(FILES:.c=.o)
