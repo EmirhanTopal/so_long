@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:15:58 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/19 23:43:23 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/20 00:27:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	cannot_start(t_data *data)
 void	cannot_ber(t_data *data, int len_filename)
 {
 	char	*temp_filename;
-	
+
 	temp_filename = ft_strchr(data->filename, '/');
 	temp_filename++;
 	if (len_filename > 5)
