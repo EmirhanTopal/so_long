@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:05:40 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/15 18:24:11 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/20 00:02:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	ft_open_malloc(t_data *data)
 	if (data->player_count > 1 || data->exit_count > 1
 		|| data->collectable_count < 1)
 	{
-		ft_printf("player c: %d, exit c: %d, collectable c: %d",
+		ft_printf("player c: %d, exit c: %d, collectable c: %d\n",
 			data->player_count, data->exit_count, data->collectable_count);
-		ft_close_game2(data);
+		ft_close_game(data);
 	}
 	data->collectable_arr = malloc(sizeof(int) * (data->collectable_count * 2));
 	data->wall_arr = malloc(sizeof(int) * (data->wall_count * 2));

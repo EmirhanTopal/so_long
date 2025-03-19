@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:40:22 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/15 18:24:38 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/19 23:57:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_exit_condition(t_data *data, int x, int y)
 	if (data->collected_count == data->collectable_count
 		&& data->exit_arr[0] == data->player_x + (data->pixel_size * x)
 		&& data->exit_arr[1] == data->player_y + (data->pixel_size * y))
-		ft_close_game(data);
+		ft_close_game_success(data);
 }
 
 void	update_collectable(t_data *data, int x, int y)

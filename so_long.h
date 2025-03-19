@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emtopal <emtopal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 17:39:41 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/13 13:14:17 by emtopal          ###   ########.fr       */
+/*   Updated: 2025/03/20 00:09:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_data
 	int		wall_index;
 	int		*exit_arr;
 	int		exit_count;
+	int		exit_control_count;
 	int		player_count;
 	int		*line_count;
 	int		line_count_index;

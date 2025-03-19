@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 02:52:59 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/15 18:22:30 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/20 00:00:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	ft_close_game(void *data)
 	{
 		(void)data;
 		data2 = (t_data *)data;
-		ft_printf("Exit Success \n");
+		ft_printf("Exit Failure \n");
 		ft_free_all_allocated_memory(data2);
 	}
-	exit(EXIT_SUCCESS);
+	exit(EXIT_FAILURE);
 }
 
 int	ft_close_game2(t_data *data)
@@ -51,5 +51,25 @@ int	ft_close_game2(t_data *data)
 	free(data->filename);
 	free(data->game_name);
 	free(data);
+	exit(EXIT_FAILURE);
+}
+
+int	ft_close_game_success(void *data)
+{
+	t_data	*data2;
+
+	if (data == NULL)
+	{
+		ft_free_all_allocated_memory(data);
+		ft_printf("data is null \n");
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		(void)data;
+		data2 = (t_data *)data;
+		ft_printf("Exit Success \n");
+		ft_free_all_allocated_memory(data2);
+	}
 	exit(EXIT_SUCCESS);
 }

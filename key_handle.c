@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:18:25 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 03:18:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/19 23:54:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	handle_key_help(int keycode_help, t_data *data)
 int	handle_key_input(int keycode, t_data *data)
 {
 	if (keycode == 65307)
-		ft_close_game(data);
+		ft_close_game_success(data);
 	handle_key_help(keycode, data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:15:58 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/19 14:33:05 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/19 23:43:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	cannot_start(t_data *data)
 	if (data->flag == 1)
 	{
 		ft_printf("Game cannot started \n");
-		ft_close_game2(data);
+		ft_close_game(data);
 	}
 	if (data->screen_x < 0 || data->screen_y < 0
 		|| !(data -> game_name) || !(data -> filename))

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 16:45:05 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/13 22:45:42 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/19 23:54:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ char	**load_map(char *filename, int *rows, t_data *data)
 	line = NULL;
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		exit(0);
+		ft_close_game2(data);
 	*rows = load_map_1(fd, line);
 	if (*rows <= 0)
-		exit(1);
+		ft_close_game2(data);
 	fd = open(filename, O_RDONLY);
 	data->line_count = malloc(sizeof(int) * data->rows);
 	load_map_2(data, line, fd, rows);
@@ -58,9 +58,7 @@ int	load_map_1(int fd, char *line)
 	{
 		line = get_next_line(fd);
 		if (line == NULL)
-		{
 			control = 0;
-		}
 		else
 			rows++;
 		free(line);

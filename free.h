@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:02:55 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 03:02:55 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/19 23:53:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	free_arrays(t_data *data);
 void	ft_free_all_allocated_memory(t_data *data);
 int		ft_close_game(void *data);
 int		ft_close_game2(t_data *data);
+int		ft_close_game_success(void *data);
 
 #endif

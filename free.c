@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 02:56:54 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/02 02:56:54 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/19 23:53:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,15 @@ void	ft_free_all_allocated_memory(t_data *data)
 {
 	ft_destroy_images(data);
 	free_map(data);
-	mlx_destroy_window(data->mlx, data->win);
-	mlx_destroy_display(data->mlx);
+	if (data->win)
+		mlx_destroy_window(data->mlx, data->win);
+	if (data->mlx)
+	{
+		mlx_destroy_display(data->mlx);
+		free(data->mlx);
+	}
 	free_arrays(data);
 	free(data->filename);
 	free(data->game_name);
-	free(data->mlx);
 	free(data);
 }
