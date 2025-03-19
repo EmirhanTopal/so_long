@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 03:15:58 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/15 18:23:51 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/19 14:33:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,18 @@ void	cannot_start(t_data *data)
 
 void	cannot_ber(t_data *data, int len_filename)
 {
-	if (len_filename > 4)
+	char	*temp_filename;
+	
+	temp_filename = ft_strchr(data->filename, '/');
+	temp_filename++;
+	if (len_filename > 5)
 	{
-		if (ft_strncmp(data->filename + len_filename - 4, ".ber", 4) != 0)
+		if (ft_strlen(temp_filename) < 5)
+		{
+			ft_printf("File type is wrong\n");
+			ft_close_game2(data);
+		}
+		if (ft_strncmp(data->filename + len_filename - 4, ".ber", 5) != 0)
 		{
 			ft_printf("File type is wrong\n");
 			ft_close_game2(data);
@@ -43,7 +52,7 @@ void	cannot_ber(t_data *data, int len_filename)
 	}
 	else
 	{
-		ft_printf("File type and lenght is wrong");
+		ft_printf("File type and lenght is wrong\n");
 		ft_close_game2(data);
 	}
 }
